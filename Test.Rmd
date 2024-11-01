@@ -25,6 +25,6 @@ GetLakeMap('BELA-001')
 ## Test: GetLakeMap('BELA-001')
 
 ```{r,label='Test GetLakeCoordinates()'}
-GetLakeCoordinates('BELA-001')
+NPSAKShallowLakes::GetLakeCoordinatesTable('BELA-001')
 ```
 
