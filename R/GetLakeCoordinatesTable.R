@@ -1,0 +1,20 @@
+#' GetLakeCoordinatesTable
+#'
+#' This returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
+#' @param Lake Lake for which spatial coordinates should be returned
+#' @return A data frame of coordinates for Lake.
+#' @examples
+#' # Get a data frame of spatial coordinates for Lake YUCH-004
+#' GetLakeCoordinatesTable('YUCH-004')
+#' @export
+GetLakeCoordinatesTable = function(Lake){
+  # Get the data using the odbc method
+  Sql = paste("SELECT PONDNAME
+,CASE WHEN M_LAT_WGS84 IS NULL And M_LAT_NAD83 IS NOT NULL THEN M_LAT_NAD83 ELSE M_LAT_WGS84 END As Lat
+,CASE WHEN M_LON_WGS84 IS NULL And M_LON_NAD83 IS NOT NULL THEN M_LON_NAD83 ELSE M_LON_WGS84 END As Lon
+, M_ELEVATION
+FROM tblMonuments
+WHERE (PONDNAME = '",Lake,"')",sep="")
+  DF = odbc::dbGetQuery(Connection,Sql)
+  return(DF)
+}
