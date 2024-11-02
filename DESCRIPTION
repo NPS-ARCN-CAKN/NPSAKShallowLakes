@@ -7,7 +7,6 @@ Maintainer: <Scott_Miller@nps.gov>
 Description: NPS Alaska Shallow Lakes Database Functions.
 License: U.S. Government Works. Public Domain.
 Encoding: UTF-8
-LazyData: true
 Imports:
     tidyverse,
     odbc,

@@ -1,3 +1,4 @@
+
 #' GetLakeCoordinatesTable
 #'
 #' This returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
@@ -8,13 +9,40 @@
 #' GetLakeCoordinatesTable('YUCH-004')
 #' @export
 GetLakeCoordinatesTable = function(Lake){
-  # Get the data using the odbc method
-  Sql = paste("SELECT PONDNAME
+
+  # Try to open a database connection to the AK_ShallowLakes database
+  Connection <- tryCatch({
+
+    #Connect to the AK_ShallowLakes database
+    Connection = GetDatabaseConnection()
+
+    # Get the data using the odbc method
+    Sql = paste("SELECT PONDNAME
 ,CASE WHEN M_LAT_WGS84 IS NULL And M_LAT_NAD83 IS NOT NULL THEN M_LAT_NAD83 ELSE M_LAT_WGS84 END As Lat
 ,CASE WHEN M_LON_WGS84 IS NULL And M_LON_NAD83 IS NOT NULL THEN M_LON_NAD83 ELSE M_LON_WGS84 END As Lon
 , M_ELEVATION
 FROM tblMonuments
 WHERE (PONDNAME = '",Lake,"')",sep="")
-  DF = odbc::dbGetQuery(Connection,Sql)
-  return(DF)
+
+    # Execute the query into a data frame
+    DF = odbc::dbGetQuery(Connection,Sql)
+    return(DF)
+  }, warning = function(w) {
+
+    # Warning
+    message("Warning: ", conditionMessage(w))
+    return(NA)
+
+  }, error = function(e) {
+
+    # Error
+    message("Error: ", conditionMessage(e))
+    return(NA)
+
+  })
+
+
 }
+
+
+
