@@ -4,10 +4,12 @@
 \alias{GetLakeMap}
 \title{GetLakeMap}
 \usage{
-GetLakeMap(Lake)
+GetLakeMap(Lake, ZoomLevel)
 }
 \arguments{
 \item{Lake}{Lake for which spatial coordinates should be returned}
+
+\item{ZoomLevel}{Initial zoom level for the lake map. Around 12-15 is usually appropriate. The user may change the zoom level when after the map is generated.}
 }
 \value{
 A Leaflet map for Lake.
@@ -16,6 +18,6 @@ A Leaflet map for Lake.
 Function to retrieve the spatial coordinates of Lake from the AK_ShallowLakes:tblMonuments table and display them in a Leaflet map.
 }
 \examples{
-# Get a Leaflet map showing Lake YUCH-004
-GetLakeMap('YUCH-004')
+# Get a Leaflet map showing Lake YUCH-004 at zoom level 13
+GetLakeMap('YUCH-004',13)
 }

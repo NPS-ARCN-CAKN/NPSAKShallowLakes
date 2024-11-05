@@ -1,12 +1,11 @@
-
 #' GetLakeCoordinatesTable
-#'
-#' This returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
-#' @param Lake Lake for which spatial coordinates should be returned
+#' The GetLakeCoordinatesTable function returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
+#' @param Lake Lake for which spatial coordinates should be returned.
 #' @return A data frame of coordinates for Lake.
 #' @examples
 #' # Get a data frame of spatial coordinates for Lake YUCH-004
-#' GetLakeCoordinatesTable('YUCH-004')
+#' LakeCoordinates = GetLakeCoordinatesTable('YUCH-004')
+#' head(LakeCoordinates)
 #' @export
 GetLakeCoordinatesTable = function(Lake){
 

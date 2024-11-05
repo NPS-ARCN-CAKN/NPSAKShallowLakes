@@ -1,8 +1,12 @@
 #' GetDatabaseConnection()
-#' This function builds a database connection to the AK_ShallowLakes database.
+#' This function returns and odbc database connection to the AK_ShallowLakes database. This function is mostly used internally by other functions in the NPSShallowLakes package, but you can use it as part of your own database queries.
 #' @return An odbc database connection object.
 #' @examples
-#' Connection = GetDatabaseConnection()    MyDataFrame = odbc::dbGetQuery(Connection,'SELECT Top 3 * FROM tblPonds')
+#' # Get a connection to the AK_ShallowLakes database
+#' Connection = GetDatabaseConnection()
+#' # Execute the query into a data frame
+#' data = odbc::dbGetQuery(Connection,'SELECT Top 3 PONDNAME FROM tblPonds')
+#' head(data)
 #' @export
 GetDatabaseConnection <- function() {
 

@@ -1,21 +1,63 @@
+---
+title: "Test NPSShallowLakes"
+author: "SDMiller"
+date: "`r Sys.Date()`"
+output: html_document
+---
 
-#' GetLakeMap
-#'
-#' Function to retrieve the spatial coordinates of Lake from the AK_ShallowLakes:tblMonuments table and display them in a Leaflet map.
-#' @param Lake Lake for which spatial coordinates should be returned
-#' @param ZoomLevel Initial zoom level for the lake map. Around 12-15 is usually appropriate. The user may change the zoom level when after the map is generated.
-#' @return A Leaflet map for Lake.
-#' @examples
-#' # Get a Leaflet map showing Lake YUCH-004 at zoom level 13
-#' GetLakeMap('YUCH-004',13)
-#' @export
-GetLakeMap = function(Lake,ZoomLevel){
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(NPSShallowLakes)
+library(odbc)
+```
 
+# Test NPSShallowLakes
+
+## GetDatabaseConnection
+
+```{r}
+# Get a connection to the AK_ShallowLakes database
+Connection = GetDatabaseConnection()
+print(Connection)
+
+# Execute the query against the database using the database connection above
+DF = odbc::dbGetQuery(Connection,'SELECT Top 3 PONDNAME FROM tblPonds')
+knitr::kable(DF)
+```
+
+## GetLakeCoordinatesTable
+
+```{r}
+# Get a data frame of spatial coordinates for Lake YUCH-004
+LakeCoordinates = GetLakeCoordinatesTable('YUCH-004')
+head(LakeCoordinates)
+```
+
+## GetLakeMap
+
+```{r}
+# Get a Leaflet map showing Lake YUCH-004
+GetLakeMap('YUCH-004',15)
+```
+
+
+## GetWaterProfilePlotForLake
+
+```{r}
+# Example of use:
+GetWaterProfilePlotForLake('BELA-033','DO_Pct')
+GetWaterProfilePlotForLake('YUCH-004','Temperature')
+```
+
+# Scratch
+
+```{r}
   # Load the leaflet library
   library(leaflet)
-
+  library(odbc)
+Lake='YUCH-004'
+ZoomLevel=13
   # Try to open a database connection to the AK_ShallowLakes database
-  Connection <- tryCatch({
 
     #Connect to the AK_ShallowLakes database
     Connection = GetDatabaseConnection()
@@ -38,26 +80,11 @@ WHERE (PONDNAME = '",Lake,"')",sep="")
 
       # Label the units
       addLabelOnlyMarkers(~Lon,~Lat, label = ~PONDNAME, data = DF,  labelOptions = labelOptions(noHide = TRUE))
-
-    return(map)
-
-  }, warning = function(w) {
-
-    # Warning
-    message("Warning: ", conditionMessage(w))
-    return(NA)
-
-  }, error = function(e) {
-
-    # Error
-    message("Error: ", conditionMessage(e))
-    return(NA)
-
-  })
+map
+```
 
 
 
-}
 
 
 

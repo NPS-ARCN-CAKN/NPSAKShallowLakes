@@ -1,13 +1,16 @@
-#' WaterProfiles_GetDataSummary
+#' GetWaterProfilesDataSummary
 #'
-#' Queries the [AK_ShallowLakes].[dbo].[Summary_WaterProfileStatisticsByLake] view and returns the records as a data frame. Data is summarized over SAMPLENUMBER replicates by lake and date.
+#' The GetWaterProfilesDataSummary function returns a summary of water profile parameters over sample replicates (usually A,B,C,etc.) and grouped by Lake and sampling date.
+#' Statistics include mean, min, max, SD and n) for each lake and sampling date.
+#' The statistics returned by this function are calculated by the AK_ShallowLakes database in the view (query) [Summary_WaterProfileStatisticsByLake].
+#' Results are returned as a data frame.
 #' @return A data frame of water profile statistics for temperature, pH, and dissolved oxygen.
 #' @examples
 #' # Example of use:
-#' WaterProfilesDataSummary = WaterProfiles_GetDataSummary
-#' head(WaterProfilesDataSummary)
+#' data = GetWaterProfilesDataSummary
+#' head(data)
 #' @export
-WaterProfiles_GetDataSummary = function(){
+GetWaterProfilesDataSummary = function(){
 
   # Try to open a database connection to the AK_ShallowLakes database
   Connection <- tryCatch({

@@ -2,20 +2,23 @@
 % Please edit documentation in R/GetLakeCoordinatesTable.R
 \name{GetLakeCoordinatesTable}
 \alias{GetLakeCoordinatesTable}
-\title{GetLakeCoordinatesTable}
+\title{GetLakeCoordinatesTable
+The GetLakeCoordinatesTable function returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .}
 \usage{
 GetLakeCoordinatesTable(Lake)
 }
 \arguments{
-\item{Lake}{Lake for which spatial coordinates should be returned}
+\item{Lake}{Lake for which spatial coordinates should be returned.}
 }
 \value{
 A data frame of coordinates for Lake.
 }
 \description{
-This returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
+GetLakeCoordinatesTable
+The GetLakeCoordinatesTable function returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
 }
 \examples{
 # Get a data frame of spatial coordinates for Lake YUCH-004
-GetLakeCoordinatesTable('YUCH-004')
+LakeCoordinates = GetLakeCoordinatesTable('YUCH-004')
+head(LakeCoordinates)
 }
