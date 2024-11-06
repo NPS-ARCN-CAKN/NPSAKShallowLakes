@@ -1,4 +1,5 @@
 #' GetDatabaseConnection()
+#'
 #' This function returns and odbc database connection to the AK_ShallowLakes database. This function is mostly used internally by other functions in the NPSShallowLakes package, but you can use it as part of your own database queries.
 #' @return An odbc database connection object.
 #' @examples

@@ -6,3 +6,4 @@
 *.html
 # But do not ignore DESCRIPTION.html
 !DESCRIPTION.html
+docs
