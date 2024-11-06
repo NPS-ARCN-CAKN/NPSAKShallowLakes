@@ -1,3 +1,8 @@
 # NPSAKShallowLakes
-## National Park Service, Alaska Region
-An R package to connect scientists to data. SQL databases are the premier option for data storage and retrieval of long-term ecosystem monitoring data. R is a popular statistical package for analyzing such data. Scientists often waste immense amounts of time trying to plumb data from SQL databases into their analytical scripts, time that could be  better spent analyzing data. To extend the plumbing analogy, this package is like a data faucet. The pipes leading from the database to the faucet are pre-built by this package.
+## Shallow Lakes Monitoring Program. National Park Service, Alaska Region
+
+An R package to connect scientists to data.  
+
+SQL databases are the premier option for data storage and retrieval of long-term ecosystem monitoring data. R is a popular statistical package for analyzing such data. Getting data from a database into R is often a time-consuming step requiring specialized technical knowledge - time that could be  better spent analyzing data.  
+
+This package works like a data faucet for the Shallow Lakes monitoring program. You just open the tap for the data stream of interest. There is no requirement to know how the pipes work. 
