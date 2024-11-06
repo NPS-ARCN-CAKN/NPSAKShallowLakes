@@ -2,8 +2,7 @@
 % Please edit documentation in R/GetLakesDataset.R
 \name{GetLakesDataset}
 \alias{GetLakesDataset}
-\title{GetLakesDataset
-Queries the [tblPonds] database table and returns the records as a data frame.}
+\title{GetLakesDataset}
 \usage{
 GetLakesDataset()
 }
@@ -11,7 +10,6 @@ GetLakesDataset()
 A data frame of Lakes data.
 }
 \description{
-GetLakesDataset
 Queries the [tblPonds] database table and returns the records as a data frame.
 }
 \examples{

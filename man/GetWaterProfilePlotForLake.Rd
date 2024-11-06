@@ -2,8 +2,7 @@
 % Please edit documentation in R/GetWaterProfilePlotForLake.R
 \name{GetWaterProfilePlotForLake}
 \alias{GetWaterProfilePlotForLake}
-\title{GetWaterProfilePlotForLake
-The GetWaterProfilePlotForLake function returns a depth profile plot of temperature by sampling date for Lake.}
+\title{GetWaterProfilePlotForLake}
 \usage{
 GetWaterProfilePlotForLake(Lake, Parameter)
 }
@@ -16,7 +15,6 @@ GetWaterProfilePlotForLake(Lake, Parameter)
 A depth profile plot of Parameter by sampling date for Lake.
 }
 \description{
-GetWaterProfilePlotForLake
 The GetWaterProfilePlotForLake function returns a depth profile plot of temperature by sampling date for Lake.
 }
 \examples{

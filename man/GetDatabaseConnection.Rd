@@ -2,8 +2,7 @@
 % Please edit documentation in R/GetDatabaseConnection.R
 \name{GetDatabaseConnection}
 \alias{GetDatabaseConnection}
-\title{GetDatabaseConnection()
-This function returns and odbc database connection to the AK_ShallowLakes database. This function is mostly used internally by other functions in the NPSShallowLakes package, but you can use it as part of your own database queries.}
+\title{GetDatabaseConnection()}
 \usage{
 GetDatabaseConnection()
 }
@@ -11,7 +10,6 @@ GetDatabaseConnection()
 An odbc database connection object.
 }
 \description{
-GetDatabaseConnection()
 This function returns and odbc database connection to the AK_ShallowLakes database. This function is mostly used internally by other functions in the NPSShallowLakes package, but you can use it as part of your own database queries.
 }
 \examples{

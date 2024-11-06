@@ -2,8 +2,7 @@
 % Please edit documentation in R/GetLakeCoordinatesTable.R
 \name{GetLakeCoordinatesTable}
 \alias{GetLakeCoordinatesTable}
-\title{GetLakeCoordinatesTable
-The GetLakeCoordinatesTable function returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .}
+\title{GetLakeCoordinatesTable}
 \usage{
 GetLakeCoordinatesTable(Lake)
 }
@@ -14,7 +13,6 @@ GetLakeCoordinatesTable(Lake)
 A data frame of coordinates for Lake.
 }
 \description{
-GetLakeCoordinatesTable
 The GetLakeCoordinatesTable function returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
 }
 \examples{

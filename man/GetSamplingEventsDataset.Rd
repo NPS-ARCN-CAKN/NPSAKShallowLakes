@@ -2,8 +2,7 @@
 % Please edit documentation in R/GetSamplingEventsDataset.R
 \name{GetSamplingEventsDataset}
 \alias{GetSamplingEventsDataset}
-\title{GetSamplingEventsDataset
-Queries the [tblEvents] database table and returns the records as a data frame. This table contains information about each lake's sampling visit.}
+\title{GetSamplingEventsDataset}
 \usage{
 GetSamplingEventsDataset()
 }
@@ -11,7 +10,6 @@ GetSamplingEventsDataset()
 A data frame of Lakes data.
 }
 \description{
-GetSamplingEventsDataset
 Queries the [tblEvents] database table and returns the records as a data frame. This table contains information about each lake's sampling visit.
 }
 \examples{
