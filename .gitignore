@@ -2,4 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+# Ignore all .html files
 *.html
+# But do not ignore DESCRIPTION.html
+!DESCRIPTION.html
