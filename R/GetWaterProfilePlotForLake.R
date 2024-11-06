@@ -1,4 +1,5 @@
 #' GetWaterProfilePlotForLake
+#'
 #' The GetWaterProfilePlotForLake function returns a depth profile plot of temperature by sampling date for Lake.
 #' @param Lake Name of the lake to profile.
 #' @param Parameter Parameter to plot. Options 'Temperature','pH','DO','DO_PCT'. Anything else will cause a database error.

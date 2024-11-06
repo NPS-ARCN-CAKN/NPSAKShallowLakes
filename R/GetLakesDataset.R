@@ -1,4 +1,5 @@
 #' GetLakesDataset
+#'
 #' Queries the [tblPonds] database table and returns the records as a data frame.
 #' @return A data frame of Lakes data.
 #' @examples

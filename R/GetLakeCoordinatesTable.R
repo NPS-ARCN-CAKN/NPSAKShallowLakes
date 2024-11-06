@@ -1,4 +1,5 @@
 #' GetLakeCoordinatesTable
+#'
 #' The GetLakeCoordinatesTable function returns a data frame of spatial coordinates in geographic coordinate system (Lat/Lon) for a shallow lakes monitoring lake .
 #' @param Lake Lake for which spatial coordinates should be returned.
 #' @return A data frame of coordinates for Lake.

@@ -1,4 +1,5 @@
 #' GetSamplingEventsDataset
+#'
 #' Queries the [tblEvents] database table and returns the records as a data frame. This table contains information about each lake's sampling visit.
 #' @return A data frame of Lakes data.
 #' @examples

@@ -1,4 +1,3 @@
-
 #' GetLakeMap
 #'
 #' Function to retrieve the spatial coordinates of Lake from the AK_ShallowLakes:tblMonuments table and display them in a Leaflet map.
